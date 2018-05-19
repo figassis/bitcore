@@ -13,5 +13,29 @@ sudo ufw enable
 
 #Setup testnet and mainnet
 current=`pwd`
-docker run -d --restart=always --name btctest -p 3002:3001 -p 18332:18332 -p 18333:18333 -v $current/testnet:/root/.bitcore figassis/docker-bitcore
-docker run -d --restart=always --name btcmain -p 3001:3001 -p 8332:8332 -p 8333:8333 -v $current/mainnet:/root/.bitcore figassis/docker-bitcore
+mainapi=3001
+testapi=3002
+
+mainrpc=8332
+testrpc=18332
+
+maininbound=18333
+testinbound=8333
+
+
+#Bitcoin Setup
+docker run -d --restart=always --name btctest -p $testapi:3001 -p $testrpc:18332 -p $testinbound:18333 -v $current/testnet:/root/.bitcore figassis/docker-bitcore:bitcoin
+docker run -d --restart=always --name btcmain -p $mainapi:3001 -p $mainrpc:8332 -p $maininbound:8333 -v $current/mainnet:/root/.bitcore figassis/docker-bitcore:bitcoin
+
+#Litecoin Setup
+let mainapi+=2
+let testapi+=2
+
+let mainrpc+=2
+let testrpc+=2
+
+let maininbound+=2
+let testinbound+=2
+
+docker run -d --restart=always --name ltctest -p $testapi:3001 -p $testrpc:18332 -p $testinbound:18333 -v $current/ltctestnet:/root/.litecore figassis/docker-bitcore:litecoin
+docker run -d --restart=always --name ltcmain -p $mainapi:3001 -p $mainrpc:8332 -p $maininbound:8333 -v $current/ltcmainnet:/root/.litecore figassis/docker-bitcore:litecoin

@@ -19,8 +19,8 @@ testapi=3002
 mainrpc=8332
 testrpc=18332
 
-maininbound=18333
-testinbound=8333
+maininbound=8333
+testinbound=18333
 
 
 #Bitcoin Setup
@@ -37,5 +37,5 @@ let testrpc+=2
 let maininbound+=2
 let testinbound+=2
 
-docker run -d --restart=always --name ltctest -p $testapi:3001 -p $testrpc:18332 -p $testinbound:18333 -v $current/ltctestnet:/root/.litecore figassis/docker-bitcore:litecoin
-docker run -d --restart=always --name ltcmain -p $mainapi:3001 -p $mainrpc:8332 -p $maininbound:8333 -v $current/ltcmainnet:/root/.litecore figassis/docker-bitcore:litecoin
+docker run -d --restart=always --name ltctest -p $testapi:3001 -p $testrpc:19332 -p $testinbound:19335 -v $current/ltctestnet:/root/.litecoin figassis/docker-bitcore:litecoin
+docker run -d --restart=always --name ltcmain -p $mainapi:3001 -p $mainrpc:9332 -p $maininbound:9333 -v $current/ltcmainnet:/root/.litecoin figassis/docker-bitcore:litecoin

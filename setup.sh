@@ -39,3 +39,16 @@ let testinbound+=2
 
 docker run -d --restart=always --name ltctest -p $testapi:3001 -p $testrpc:19332 -p $testinbound:19335 -v $current/ltctestnet:/root/.litecoin figassis/docker-bitcore:litecoin
 docker run -d --restart=always --name ltcmain -p $mainapi:3001 -p $mainrpc:9332 -p $maininbound:9333 -v $current/ltcmainnet:/root/.litecoin figassis/docker-bitcore:litecoin
+
+#Litecoin Setup
+let mainapi+=2
+let testapi+=2
+
+let mainrpc+=2
+let testrpc+=2
+
+let maininbound+=2
+let testinbound+=2
+
+docker run -d --restart=always --name dashtest -p $testapi:3001 -p $testrpc:18332 -p $testinbound:18333 -v $current/dashtestnet:/root/.bitcore figassis/docker-bitcore:dash
+docker run -d --restart=always --name dashmain -p $mainapi:3001 -p $mainrpc:8332 -p $maininbound:8333 -v $current/dashmainnet:/root/.bitcore figassis/docker-bitcore:dash

@@ -9,6 +9,10 @@
   ],
   "servicesConfig": {
     "bitcoind": {
+      "spawn": {
+        "datadir": "/root/.dashcore/data",
+        "exec": "/root/.dash/bin/dashd"
+      },
       "connect": [{
         "rpchost": "127.0.0.1",
         "rpcport": 9998,

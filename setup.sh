@@ -50,5 +50,5 @@ let testrpc+=2
 let maininbound+=2
 let testinbound+=2
 
-docker run -d --restart=always --name dashtest -p $testapi:3001 -p $testrpc:18332 -p $testinbound:18333 -v $current/dashtestnet:/root/.bitcore figassis/docker-bitcore:dash
-docker run -d --restart=always --name dashmain -p $mainapi:3001 -p $mainrpc:8332 -p $maininbound:8333 -v $current/dashmainnet:/root/.bitcore figassis/docker-bitcore:dash
+docker run -d --restart=always --name dashtest -p $testapi:3001 -p $testrpc:9998 -p $testinbound:19999 -v $current/dashtestnet:/root/.dashcore figassis/docker-bitcore:dash
+docker run -d --restart=always --name dashmain -p $mainapi:3001 -p $mainrpc:9998 -p $maininbound:9999 -v $current/dashmainnet:/root/.dashcore figassis/docker-bitcore:dash

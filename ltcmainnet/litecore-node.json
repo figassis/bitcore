@@ -1,19 +1,19 @@
 {
   "network": "livenet",
-  "port": 3001,
+"port": 3001,
   "services": [
-    "litecoind",
+    "bitcoind",
     "web",
-    "insight-api",
-    "insight-ui"
+    "insight-lite-api",
+    "insight-lite-ui"
   ],
   "servicesConfig": {
-    "litecoind": {
+    "bitcoind": {
       "spawn": {
-        "datadir": "/root/.litecore/data",
+        "datadir": "/root/.litecoin/data",
         "exec": "/usr/local/lib/node_modules/litecore/node_modules/litecore-node/bin/litecoind"
       },
-      "insight-api": {
+      "insight-lite-api": {
   "disableRateLimiter": true,
         "rateLimiterOptions": {
         "limit":  1000000000000

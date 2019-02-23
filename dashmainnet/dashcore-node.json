@@ -2,16 +2,16 @@
   "network": "livenet",
   "port": 3001,
   "services": [
-    "bitcoind",
-    "insight-api-dash",
-    "insight-ui-dash",
+    "dashd",
+    "@dashevo/insight-ui",
+    "@dashevo/insight-api",
     "web"
   ],
   "servicesConfig": {
-    "bitcoind": {
+    "dashd": {
       "spawn": {
         "datadir": "/root/.dashcore/data",
-        "exec": "/root/.dash/bin/dashd"
+        "exec": "/opt/dashd"
       },
       "connect": [{
         "rpchost": "127.0.0.1",

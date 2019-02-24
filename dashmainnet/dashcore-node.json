@@ -11,7 +11,7 @@
     "dashd": {
       "spawn": {
         "datadir": "/root/.dashcore/data",
-        "exec": "/opt/dashd"
+        "exec": "/opt/dashd/bin/dashd"
       },
       "connect": [{
         "rpchost": "127.0.0.1",

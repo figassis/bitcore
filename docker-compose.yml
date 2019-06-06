@@ -35,7 +35,7 @@ services:
       - 8334:9332
       - 8335:9333
     volumes:
-      - /var/crypto/ltcmain:/root/.bitcore
+      - /var/crypto/ltcmain:/root/.litecoin
   ltctest:
     image: figassis/docker-bitcore:litecoin
     container_name: ltctest
@@ -47,7 +47,7 @@ services:
       - 18334:19332
       - 18335:19335
     volumes:
-      - /var/crypto/ltctest:/root/.bitcore
+      - /var/crypto/ltctest:/root/.litecoin
   dashmain:
     image: figassis/docker-bitcore:dash
     container_name: dashmain
@@ -59,7 +59,7 @@ services:
       - 8336:9998
       - 8337:9999
     volumes:
-      - /var/crypto/dashmain:/root/.bitcore
+      - /var/crypto/dashmain:/root/.dashcore
   dashtest:
     image: figassis/docker-bitcore:dash
     container_name: dashtest
@@ -71,4 +71,4 @@ services:
       - 18336:9998
       - 18337:19999
     volumes:
-      - /var/crypto/dashtest:/root/.bitcore
+      - /var/crypto/dashtest:/root/.dashcore

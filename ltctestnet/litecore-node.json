@@ -14,10 +14,10 @@
         "exec": "/usr/local/lib/node_modules/litecore/node_modules/litecore-node/bin/litecoind"
       },
       "insight-lite-api": {
-  "disableRateLimiter": true,
+        "disableRateLimiter": true,
         "rateLimiterOptions": {
-        "limit":  1000000000000
-      }
+          "limit": 1000000000000
+        }
       }
     }
   }

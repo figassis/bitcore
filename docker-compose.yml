@@ -1,0 +1,74 @@
+version: "3"
+services:
+  btcmain:
+    image: figassis/docker-bitcore:bitcoin
+    container_name: btcmain
+    restart: always
+    environment:
+      coin: mainnet
+    ports:
+      - 3001:3001
+      - 8332:8332
+      - 8333:8333
+    volumes:
+      - /var/crypto/btcmain:/root/.bitcore
+  btctest:
+    image: figassis/docker-bitcore:bitcoin
+    container_name: btctest
+    restart: always
+    environment:
+      coin: testnet
+    ports:
+      - 3002:3001
+      - 18332:18332
+      - 18333:18333
+    volumes:
+      - /var/crypto/btctest:/root/.bitcore
+  ltcmain:
+    image: figassis/docker-bitcore:litecoin
+    container_name: ltcmain
+    restart: always
+    environment:
+      coin: ltcmainnet
+    ports:
+      - 3003:3001
+      - 8334:9332
+      - 8335:9333
+    volumes:
+      - /var/crypto/ltcmain:/root/.bitcore
+  ltctest:
+    image: figassis/docker-bitcore:litecoin
+    container_name: ltctest
+    restart: always
+    environment:
+      coin: ltctestnet
+    ports:
+      - 3004:3001
+      - 18334:19332
+      - 18335:19335
+    volumes:
+      - /var/crypto/ltctest:/root/.bitcore
+  dashmain:
+    image: figassis/docker-bitcore:dash
+    container_name: dashmain
+    restart: always
+    environment:
+      coin: dashmainnet
+    ports:
+      - 3005:3001
+      - 8336:9998
+      - 8337:9999
+    volumes:
+      - /var/crypto/dashmain:/root/.bitcore
+  dashtest:
+    image: figassis/docker-bitcore:dash
+    container_name: dashtest
+    restart: always
+    environment:
+      coin: dashtestnet
+    ports:
+      - 3006:3001
+      - 18336:9998
+      - 18337:19999
+    volumes:
+      - /var/crypto/dashtest:/root/.bitcore
